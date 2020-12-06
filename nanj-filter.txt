@@ -1,47 +1,25 @@
 ! Title: なんJ改修フィルター
-! Homepage: http://wikiwiki.jp/nanj-adguard/
+! Version: 2020-11-28
+! Homepage: https://wikiwiki.jp/nanj-adguard/%E3%81%AA%E3%82%93J%E6%94%B9%E4%BF%AE%E3%83%95%E3%82%A3%E3%83%AB%E3%82%BF%E3%83%BC
 ! License: CC0 (http://creativecommons.org/publicdomain/zero/1.0/)
-! Last modified: 2018-02-26
-! Description: 日本語ウェブサイト・日本語アプリ・280blocker利用時におけるAdGuard for Androidの不具合等を改修するためのフィルターです。
+! Description: 280blocker adblock filter購読時におけるAdGuard for Androidの不具合を改修するためにユーザールールで購読するフィルタ。
 !
-! 最新チェック
-wikiwiki.jp##a[href*="#nanj-adguard_2018-02-26"]
+!【ウェブサイトが表示されない】
 !
-! ポチッとギフト、ソフトバンクでの不具合への対応
-@@||microad.jp^$app=com.adguard.dns
-@@||microad.jp^$domain=sbg.jp|softbank.jp
-@@||microad.net^$app=com.adguard.dns
-@@||microad.net^$domain=sbg.jp|softbank.jp
+!●フレッシュアイが表示されない不具合への対応
+!https://wikiwiki.jp/nanj-adguard/%E4%B8%8D%E5%85%B7%E5%90%88%E6%83%85%E5%A0%B1#tab40826
+@@||fresheye.com^$app=com.adguard.dns
 !
-! アテニアでの不具合への対応
-@@||rt.rtoaster.jp^$app=com.adguard.dns
-@@||rt.rtoaster.jp/Rtoaster.js$domain=attenir.co.jp|attenir.dga.jp
+!【ウェブサイトの表示がおかしい】
 !
-! KONAMIでの不具合への対応
+!●KONAMIでの不具合への対応
+!https://wikiwiki.jp/nanj-adguard/%E4%B8%8D%E5%85%B7%E5%90%88%E6%83%85%E5%A0%B1#t2453d27
 @@||coremetrics.com^$app=com.adguard.dns
-@@||coremetrics.com^$domain=konami.com|konami.jp|konami.net|konamistyle.jp
 !
-! 109シネマズでの不具合への対応
-@@||googleadservices.com^$app=com.adguard.dns
-@@||googleadservices.com^$domain=109cinemas.net
+!【広告ブロック解除を要求する警告が出る】
 !
-! NHKでの不具合への対応
-@@||79423.analytics.edgekey.net^$app=com.adguard.dns
-@@||79423.analytics.edgekey.net/html5/akamaihtml5-min.js$domain=nhk.or.jp
-!
-! ホウドウキョクでの不具合への対応
-houdoukyoku.jp#@#.ad-buttons
-!
-! Pontaでの不具合への対応
-@@||mtburn.com^$app=com.adguard.dns
-@@||mtburn.com^$domain=ponta.jp
-@@||mtburn.jp^$app=com.adguard.dns
-@@||mtburn.jp^$domain=ponta.jp
-!
-! XVIDEOSでの不具合への対応
-@@||xvideos.com/profiles^$elemhide,jsinject
-!
-! AdGuard未対応のアンチ広告ブロックへの対応
+!●AdGuard未対応のアンチ広告ブロックへの対応
+!https://wikiwiki.jp/nanj-adguard/%E4%B8%8D%E5%85%B7%E5%90%88%E6%83%85%E5%A0%B1#a4e25a9a
 ||takanohane.wp-x.jp/wp-content/uploads/OmuOjWzhRxzY/MirKIJQfAgtO.js
 savevideo.me#%#AG_abortInlineScript(/ads_notice_lightbox/, '$');
 monara.net,sorasi.net#%#AG_abortInlineScript(/pagead2\.googlesyndication\.com/, 'document.addEventListener');
@@ -49,7 +27,8 @@ k05.biz,z0i.net#%#AG_abortInlineScript(/ad250/, 'eval');
 k05.biz,z0i.net#@#.ad250
 server-setting.info#@#.adsbygoogle
 !
-! AdGuard一部未対応のアンチ広告ブロックへの対応
+!●AdGuard一部未対応のアンチ広告ブロックへの対応
+!https://wikiwiki.jp/nanj-adguard/%E4%B8%8D%E5%85%B7%E5%90%88%E6%83%85%E5%A0%B1#e9287215
 ||socom.yokohama/wp-content/uploads/bsmkwEeQAyTm/zbKhyumAkhez.js
 akb48gnittimatome.com,eikaiwamastery.blogspot.jp,gtoys.blog48.fc2.com,halchim.jp,kamikiyuki.hatenablog.com,omutulove.blog.fc2.com,wakudan.seesaa.net#%#AG_abortInlineScript(/pagead2\.googlesyndication\.com/, 'document.addEventListener');
 anipo.jp#@#.adbanner
@@ -57,22 +36,34 @@ publicdomainq.net#@#.adsbygoogle
 @@||mushinavi.com^$generichide
 @@||nazolog.com^$generichide
 !
-! 保守速報で280blockerのルールが無効になる問題への対応
-hosyusokuhou.jp##div.aban
-hosyusokuhou.jp##div.abox
+!【アプリの動作がおかしい】
 !
-! LINEでの不具合への対応
-@@||applovin.com^$app=com.adguard.dns|jp.naver.line.android
+!●LINE(jp.naver.line.android)での不具合への対応
+!https://wikiwiki.jp/nanj-adguard/%E4%B8%8D%E5%85%B7%E5%90%88%E6%83%85%E5%A0%B1#lc6992b3
+@@||applovin.com^$app=jp.naver.line.android
+@@||applovin.com^$app=com.adguard.dns
 !
-! FODでの不具合への対応
-@@||web-jp.ad-v.jp^$app=com.adguard.dns|air.jp.co.fujitv.fodviewer
+!●FOD(air.jp.co.fujitv.fodviewer)での不具合への対応
+!https://wikiwiki.jp/nanj-adguard/%E4%B8%8D%E5%85%B7%E5%90%88%E6%83%85%E5%A0%B1#a23f5dc9
+@@||web-jp.ad-v.jp^$app=air.jp.co.fujitv.fodviewer
+@@||web-jp.ad-v.jp^$app=com.adguard.dns
 !
-! OfficeSuite、MX Player、ChMateなどでの不具合への対応
-||googleads.g.doubleclick.net/mads/static/mad/sdk/native/*.html$important,empty
-!
-! graph.facebook.com使用アプリへの対応
+!●graph.facebook.com使用アプリへの対応
 ||graph.facebook.com^$app=com.mxtech.videoplayer.ad|kr.co.rinasoft.howuse|mmapps.mirror.free
 !
-! ★無料版ユーザー向け厳罰化ルール★
-! 以下の「!」を削除すると、一部のアプリのFacebook連携で不具合が発生することがありますが、無料版ユーザーでもgraph.facebook.com使用アプリ（MX Player等）の広告をブロックすることができます。
-!||graph.facebook.com^$app=com.adguard.dns
+!【不具合内容が不明】
+!
+!【その他】
+!
+!【不具合・デメリットを含むルール】
+!◆以下のルールの「!」を外してユーザールールに追加してください。
+!
+!●LINE(jp.naver.line.android)のLINE Out Freeで通話可能にするためのルール
+!★これを使用するとGoogle開発者サービス経由の広告を防ぐことができません。
+!@@||doubleclick.net^$app=jp.naver.line.android
+!@@||doubleclick.net^$app=com.google.android.gms
+!@@||doubleclick.net^$app=com.adguard.dns
+!@@||google-analytics.com^$app=com.google.android.gms
+!@@||google-analytics.com^$app=com.adguard.dns
+!@@||gstatic.com^$app=jp.naver.line.android
+!@@||gstatic.com^$app=com.adguard.dns
